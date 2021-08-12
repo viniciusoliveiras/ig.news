@@ -1,8 +1,9 @@
+import { query as q } from 'faunadb';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getSession } from 'next-auth/client';
-import { query as q } from 'faunadb';
-import { stripe } from '../../services/stripe';
+
 import { fauna } from '../../services/fauna';
+import { stripe } from '../../services/stripe';
 
 type User = {
   ref: {
@@ -57,8 +58,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     return res.status(200).json({ sessionId: stripeCheckoutSession.id });
-  } else {
-    res.setHeader('Allow', 'POST');
-    res.status(405).end('Method not allowed');
   }
+  res.setHeader('Allow', 'POST');
+  res.status(405).end('Method not allowed');
+
+  return 0;
 };

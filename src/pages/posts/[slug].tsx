@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/no-await-sync-query */
 import { GetServerSideProps } from 'next';
 import { getSession } from 'next-auth/client';
 import Head from 'next/head';

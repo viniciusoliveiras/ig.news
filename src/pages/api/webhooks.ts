@@ -1,6 +1,9 @@
+/* eslint-disable no-case-declarations */
+/* eslint-disable no-restricted-syntax */
 import { NextApiRequest, NextApiResponse } from 'next';
 import { Readable } from 'stream';
 import Stripe from 'stripe';
+
 import { stripe } from '../../services/stripe';
 import { saveSubscription } from './_lib/manageSubscription';
 
@@ -85,4 +88,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.setHeader('Allow', 'POST');
     res.status(405).end('Method not allowed');
   }
+
+  return 0;
 };

@@ -1,10 +1,13 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
+/* eslint-disable testing-library/no-await-sync-query */
+import { useEffect } from 'react';
+
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useSession } from 'next-auth/client';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { RichText } from 'prismic-dom';
-import { useEffect } from 'react';
 
 import { getPrismicClient } from '../../../services/prismic';
 import styles from '../post.module.scss';
@@ -47,7 +50,7 @@ export default function PostPreview({ post }: PostPreviewPros) {
 
           <div className={styles.continueReading}>
             Wanna continue reading?
-            <Link href='/'>
+            <Link href="/">
               <a>Subscribe now 🤗</a>
             </Link>
           </div>
