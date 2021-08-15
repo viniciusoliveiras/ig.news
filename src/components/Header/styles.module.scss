@@ -13,6 +13,10 @@
 
   align-items: center;
 
+  .logoMobile {
+    display: none;
+  }
+
   nav {
     margin-left: 5rem;
     height: 5rem;
@@ -55,5 +59,26 @@
 
   button {
     margin-left: auto;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 3rem;
+    justify-content: space-between;
+
+    .logoDesktop {
+      display: none;
+    }
+
+    .logoMobile {
+      display: block;
+    }
+
+    nav {
+      margin-left: 0;
+    }
+
+    button {
+      margin-left: 0;
+    }
   }
 }
