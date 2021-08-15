@@ -23,6 +23,14 @@
       display: none;
     }
   }
+
+  @media (orientation: landscape) and (max-width: 1024px) {
+    margin-top: 4rem;
+
+    img {
+      height: 421px;
+    }
+  }
 }
 
 .hero {
